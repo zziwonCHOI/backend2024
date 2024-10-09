@@ -1,0 +1,20 @@
+syntax="proto2";
+
+package mju;
+
+message Person{
+    required string name=1;
+    optional int32 id=2;
+
+    enum PhoneType{
+        MOBILE=0;
+        HOME=1;
+    }
+
+    message PhoneNumber{
+        optional string number=1;
+        optional PhoneType type=2 [default=HOME]; //default로 필드의 기본값을 지정한다. 
+    }
+
+    repeated PhoneNumber phones=4;//필드가 배열 형태일때는 optional 말고 repeated 사용
+}
