@@ -19,6 +19,10 @@ int main(){
     Person::PhoneNumber *phone= p->add_phones(); //PhoneNumber의 객체를 리스트에 추가
     phone->set_number("010-111-1234");
     phone->set_type(Person::MOBILE);
+    
+    phone = p->add_phones();
+    phone->set_number("02-100-1000");
+    phone->set_type(Person::HOME);
 
     const string s=p->SerializeAsString(); //객체를 직렬화 하여 string 타입으로 반환
     cout<<"Length: "<<s.length()<<endl;
